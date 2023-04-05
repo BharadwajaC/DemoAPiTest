@@ -20,7 +20,8 @@ CMD ["mvn"]
 
 
 RUN apk update
-RUN apk install git
+RUN apk upgrade
+RUN apk add git
 RUN git clone https://github.com/BharadwajaC/DemoAPiTest.git
 RUN chmod -R 777 DemoAPiTest
 WORKDIR /DemoAPiTest
