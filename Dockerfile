@@ -19,8 +19,8 @@ ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 CMD ["mvn"]
 
 
-RUN apt-get update  
-RUN apt install git -y
+RUN apk-get update  
+RUN apk install git -y
 RUN git clone https://github.com/BharadwajaC/DemoAPiTest.git
 RUN chmod -R 777 DemoAPiTest
 WORKDIR /DemoAPiTest
