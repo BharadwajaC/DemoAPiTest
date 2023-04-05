@@ -1,6 +1,6 @@
-FROM maven:3.8.3-openjdk-11
-RUN apt-get update        
-RUN apt-get install -y git
+FROM maven:3.8.3-openjdk-17
+RUN yum update        
+RUN yum install git -y
 RUN git clone https://github.com/BharadwajaC/DemoAPiTest.git
 RUN chmod -R 777 DemoAPiTest
 WORKDIR /DemoAPiTest
