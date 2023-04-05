@@ -1,5 +1,5 @@
 FROM maven:3.8.3-amazoncorretto-17
-RUN yum update        
+RUN yum update -y  
 RUN yum install git -y
 RUN git clone https://github.com/BharadwajaC/DemoAPiTest.git
 RUN chmod -R 777 DemoAPiTest
