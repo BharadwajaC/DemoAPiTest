@@ -8,27 +8,27 @@ pipeline {
             }
         }
         
-        stage('Build Overall') {
-            steps {
-                script {
-                    sh 'mvn -v'
-                    sh 'mvn clean install'
-                }
-            }
-        }
-        // stage('Build and Test') {
+        // stage('Build Overall') {
         //     steps {
         //         script {
-        //             // Loop through submodules and run Maven clean test
-        //             def submodules = ['BookStore', 'ms-payment']
-                    
-        //             for (def submodule in submodules) {
-        //                 dir(submodule) {
-        //                     sh 'mvn clean install'
-        //                 }
-        //             }
+        //             sh 'mvn -v'
+        //             sh 'mvn clean install'
         //         }
         //     }
         // }
+        stage('Build and Test') {
+            steps {
+                script {
+                    // Loop through submodules and run Maven clean test
+                    def submodules = ['BookStore', 'ms-payment']
+                    
+                    for (def submodule in submodules) {
+                        dir(submodule) {
+                            sh 'mvn clean install'
+                        }
+                    }
+                }
+            }
+        }
     }
 }
