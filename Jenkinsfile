@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Loop through submodules and run Maven clean test
-                    def submodules = ['Bookstore', 'ms-payment']
+                    def submodules = ['BookStore', 'ms-payment']
                     
                     for (def submodule in submodules) {
                         dir(submodule) {
